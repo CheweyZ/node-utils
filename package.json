@@ -1,0 +1,24 @@
+{
+  "name": "node-utils-extend",
+  "version": "1.0.0",
+  "description": "A Collection of useful utility functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CheweyZ/node-utils.git"
+  },
+  "keywords": [
+    "node",
+    "utils",
+    "utilities"
+  ],
+  "author": "CheweyZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CheweyZ/node-utils/issues"
+  },
+  "homepage": "https://github.com/CheweyZ/node-utils#readme"
+}

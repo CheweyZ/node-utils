@@ -29,7 +29,7 @@ function randomFloat(min, max) {
  * @returns {Number} 
  */
 function randomInt(min, max) {
-    return Math.floor(randomFloat(min, max))
+    return Math.round(randomFloat(min, max))
 }
 
 /**

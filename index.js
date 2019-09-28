@@ -1,3 +1,4 @@
+//@ts-check
 const https = require("https")
 const http = require("http")
 
@@ -43,12 +44,16 @@ function capitalize(str) {
 /**
  * Resolves first promise to complete
  * Rejects if all fail
- * @param {Promise<T>} promises
+ * @param {Array<Promise<T>>} promises
  * @returns {Promise<T>}
  * @template T 
  */
 function promiseAny(promises) {
-    return promiseReverse(Promise.all([...promises].map(promiseReverse)));
+    return new Promise((res,rej)=>{
+        // Flip promise all so reject is valid and resolves first
+        // (Cant use generic reverse as promise.all type is Promise<T[]> which is invalid in this case)
+        Promise.all(promises.map(promiseReverse)).then(rej, res)
+    });
 }
 
 /**

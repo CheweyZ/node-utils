@@ -9,7 +9,7 @@ const http = require("http")
  * @template T 
  */
 function randomElement(arr) {
-    return arr[randomInt(0, arr.length)]
+    return arr[randomInt(0, arr.length-1)]
 }
 
 /**

@@ -3,17 +3,17 @@ const https = require("https")
 const http = require("http")
 
 /**
- * 
+ * Returns a random element from the array
  * @param {Array<T>} arr
  * @returns {T}
  * @template T 
  */
 function randomElement(arr) {
-    return arr[randomInt(0, arr.length-1)]
+    return arr[randomInt(0, arr.length - 1)]
 }
 
 /**
- * 
+ * Returns a float inclusive of the bounds
  * @param {Number} min 
  * @param {Number} max
  * @returns {Number} 
@@ -23,13 +23,13 @@ function randomFloat(min, max) {
 }
 
 /**
- * 
+ * Returns a random int inclusive of bounds
  * @param {Number} min 
  * @param {Number} max
  * @returns {Number} 
  */
 function randomInt(min, max) {
-    return Math.round(randomFloat(min, max))
+    return min + Math.floor(Math.random() * (max - min + 1))
 }
 
 /**
@@ -38,7 +38,7 @@ function randomInt(min, max) {
  * @returns {String} 
  */
 function capitalize(str) {
-    return this.charAt(0).toUpperCase() + this.slice(1);
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 /**
@@ -49,7 +49,7 @@ function capitalize(str) {
  * @template T 
  */
 function promiseAny(promises) {
-    return new Promise((res,rej)=>{
+    return new Promise((res, rej) => {
         // Flip promise all so reject is valid and resolves first
         // (Cant use generic reverse as promise.all type is Promise<T[]> which is invalid in this case)
         Promise.all(promises.map(promiseReverse)).then(rej, res)

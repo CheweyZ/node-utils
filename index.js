@@ -76,7 +76,7 @@ function promiseReverse(promise) {
  * @template T
  */
 function arrayChunk(array, size) {
-    const chunked_arr = new Array(Math.ceil(array.length / size));
+    const chunked_arr = [];
     let index = 0;
     while (index < array.length) {
         chunked_arr.push(array.slice(index, size + index));
